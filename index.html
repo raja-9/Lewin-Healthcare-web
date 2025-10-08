@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Presentation App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div id="homePage">
+    <header>
+      <h1>Doctor Presentation</h1>
+      <button id="addDoctorBtn">+ Add Doctor</button>
+      <button id="backupBtn">💾 Backup</button>
+      <button id="restoreBtn">📂 Restore</button>
+    </header>
+
+    <main id="doctorList"></main>
+  </div>
+
+  <!-- Slideshow Page -->
+  <div id="slideshowPage" style="display: none;">
+    <div class="slideshow-header">
+      <h2 id="doctorName"></h2>
+      <div class="controls">
+        <button id="addImageBtn">+ Add Images</button>
+        <button id="fullscreenBtn">⛶</button>
+        <button id="backBtn">← Back</button>
+      </div>
+    </div>
+
+    <div class="slideshow-container" id="slidesContainer"></div>
+
+    <div class="slide-controls">
+      <button id="prevBtn">← Previous</button>
+      <span id="slideCounter">0 / 0</span>
+      <button id="nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
