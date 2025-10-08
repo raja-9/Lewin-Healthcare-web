@@ -203,3 +203,23 @@ header button:hover {
 .delete-text-btn:hover {
   background: #e04444;
 }
+
+/* 🗑️ Delete Image Button */
+.delete-image-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 60, 60, 0.85);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.delete-image-btn:hover {
+  background: rgba(230, 40, 40, 0.95);
+}

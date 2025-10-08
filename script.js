@@ -104,14 +104,39 @@ function renderSlides() {
     slide.classList.add("slide");
     if (i === currentSlide) slide.classList.add("active");
 
+    const imgContainer = document.createElement("div");
+    imgContainer.style.position = "relative";
+    imgContainer.style.width = "100%";
+    imgContainer.style.height = "100%";
+    imgContainer.style.display = "flex";
+    imgContainer.style.justifyContent = "center";
+    imgContainer.style.alignItems = "center";
+
     const img = document.createElement("img");
     img.src = src;
-    slide.appendChild(img);
+    imgContainer.appendChild(img);
+
+    // 🗑️ Delete button on image
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete Image";
+    delBtn.classList.add("delete-image-btn");
+    delBtn.onclick = () => {
+      if (confirm("Delete this image?")) {
+        doctor.images.splice(i, 1);
+        saveDoctors();
+        if (currentSlide >= doctor.images.length) currentSlide = 0;
+        renderSlides();
+      }
+    };
+
+    imgContainer.appendChild(delBtn);
+    slide.appendChild(imgContainer);
     slidesContainer.appendChild(slide);
   });
 
   slideCounter.textContent = `${currentSlide + 1} / ${doctor.images.length}`;
 }
+
 
 // Add Images
 document.getElementById("addImageBtn").addEventListener("click", () => {
